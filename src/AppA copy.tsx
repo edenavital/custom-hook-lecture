@@ -1,14 +1,16 @@
-import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { CompA } from "./CompA";
 import { CompB } from "./CompB";
-function App() {
+import { useCounter } from "./hooks/useCounter";
+function AppB() {
+  const { counter, setCounter } = useCounter();
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <CompA />
+        <CompA counter={counter} setCounter={setCounter} />
         <CompB />
       </header>
     </div>
